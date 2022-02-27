@@ -1,0 +1,76 @@
+.login-signup-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $clr2;
+    color: $clr5;
+    gap: 10px;
+    @include for-mobile-layout {
+        width: 80%;
+    }
+    
+    @include for-narrow-layout {
+        width: 50%;
+    }
+
+    @include for-wide-layout {
+        max-width: 30%;
+    } 
+
+    form {
+        gap: 10px;
+        align-items: center;
+        width: 80%;
+        > * {
+            border-radius: 3px;
+            border: none;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        input {
+            padding: 8px 12px;
+            background-color: $clr4;
+            outline: none;
+            color: $clr1;
+            width: 100%;
+            text-align: center;
+        }
+        button {
+            background-color: $clr1;
+            width: 80%;
+            padding: 8px 12px;
+            color: $clr5;
+            font-weight: 500;
+            margin-top: 10px;
+            
+        }
+    }
+
+    hr {
+        width: 80%;
+    }
+
+    small {
+        cursor: pointer;
+        font-size: rem(16px);
+        font-weight: 400;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.modal-background {
+    position: absolute;
+    background-color: rgb(235 233 233 / 60%);
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+}

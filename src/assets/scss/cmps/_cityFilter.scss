@@ -1,0 +1,20 @@
+.city-filter {
+    input {
+        padding: 8px 12px;
+        width: 80vw;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+    }
+    width: 100%;
+    // margin: 0;
+    @include for-normal-layout {
+        margin: auto;
+        max-width: 70%;
+        input {
+            // width: 40vw;
+            width: 50vw;
+        }
+    }
+}

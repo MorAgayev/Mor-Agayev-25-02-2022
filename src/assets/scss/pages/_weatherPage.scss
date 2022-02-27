@@ -1,0 +1,51 @@
+.weather-page {
+    gap: 30px;
+    .filter-container {
+        gap: 10px;
+        flex-direction: column;
+
+        button {
+            align-self: flex-start;
+        }
+        @include for-normal-layout {
+            flex-direction: row;
+            button {
+                align-self: flex-end;
+            }
+        }
+        @include for-normal-layout {
+            flex-direction: row;
+            button {
+                align-self: flex-end;
+            }
+        }
+    }
+    .current-weather {
+        margin: 20px auto;
+        justify-content: space-evenly;
+        gap: 10px;
+        img {
+            width: 40%;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: rem(35px)
+        }
+    }
+
+    button {
+        background-color: #c68121;
+        color: $clr5;
+        border: none;
+        border-radius: 3px;
+        box-shadow:0px 3px 13px -3px rgba(0,0,0,0.44);
+        padding: 8px 12px;
+        font-weight: 500;
+        transition:all 0.3s;
+
+        &:hover {
+            background-color: #e09731;
+        }
+    }
+}
