@@ -5,7 +5,8 @@ export const weatherService = {
 }
 
 const STORAGE_KEY = 'cities'
-const API_KEY = 'pdw7pKEq08fLLvW4vGvE4uWyVZejz5CT';
+const API_KEY = 'ZVuNrquajpGixnYQHGQ7yhNXqstvBAa4';
+// const API_KEY = 'pdw7pKEq08fLLvW4vGvE4uWyVZejz5CT';
 const gCities = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || []
 
 async function query(location ='tel aviv') {
