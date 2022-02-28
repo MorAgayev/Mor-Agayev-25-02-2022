@@ -4,7 +4,7 @@
       <app-filter @setFilter="setFilter"/>
       <el-switch @change="changeTempType" v-model="isCelsius" active-text="C" inactive-text="F">
       </el-switch>
-      <button v-if="user" @click="toggleFavorite">{{setFavoriteBtn}}</button>
+      <button v-if="setIsUser" @click="toggleFavorite">{{setFavoriteBtn}}</button>
     </div>
     <div class="current-weather flex align-center">
       <img :src="setWeatherImg" alt="">
@@ -108,6 +108,9 @@ export default {
         return this.cityWeather.currWeatherF.Value + ' ' + this.cityWeather.currWeatherF.Unit;
       }
     },
+    setIsUser() {
+      return this.$store.getters.getLoggedinUser
+    }
   },
 
   watch: {
