@@ -17,7 +17,7 @@ async function query(location ='tel aviv') {
     .then(res => { return {code: res.data[0].Key, name: res.data[0].LocalizedName}})
     
     city = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${city.code}?apikey=${API_KEY}&details=true`)
-    .then(res => { return {...city ,currWeather:res.data[0].ApparentTemperature.Metric, description: res.data[0].WeatherText}})
+    .then(res => { return {...city ,currWeatherC:res.data[0].ApparentTemperature.Metric, currWeatherF:res.data[0].ApparentTemperature.Imperial, description: res.data[0].WeatherText}})
 
     city.dailyForecasts = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${city.code}?apikey=${API_KEY}&details=true&metric=true`)
     .then(res => { return res.data.DailyForecasts})

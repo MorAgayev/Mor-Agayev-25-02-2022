@@ -3,15 +3,15 @@
     .filter-container {
         gap: 10px;
         flex-direction: column;
-
-        button {
-            align-self: flex-start;
-        }
+        justify-content: space-between;
+        // button {
+        //     align-self: flex-start;
+        // }
         @include for-normal-layout {
             flex-direction: row;
-            button {
-                align-self: flex-end;
-            }
+            // button {
+            //     align-self: flex-end;
+            // }
         }
         @include for-normal-layout {
             flex-direction: row;

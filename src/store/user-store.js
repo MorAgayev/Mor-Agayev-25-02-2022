@@ -1,18 +1,22 @@
-import { userService } from '../services/userService'
+import { userService } from '../services/userService';
+
 export default {
     state: {
         loggedinUser: userService.getLoggedinUser()
     },
+
     getters: {
         getLoggedinUser(state) {
             return state.loggedinUser
         }
     },
+
     mutations: {
         setUser(state, {user}) {
             state.loggedinUser = user;
         },
     },
+
     actions:{
         async login({commit}, {user}) {
             try {

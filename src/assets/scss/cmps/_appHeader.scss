@@ -1,8 +1,12 @@
 .app-header {
     margin-top: 10px;
     margin-bottom: 40px;
-    font-weight:500;
-
+    font-weight:500; 
+    .logo {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 600;
+        font-size: rem(25px); 
+    }
     nav {
         gap: 15px;
 
@@ -16,5 +20,9 @@
             font-weight: 500;
             border-radius: 3px;
         }
+    }
+
+    @include for-mobile-layout {
+        padding: 26px;
     }
 }

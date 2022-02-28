@@ -21,7 +21,6 @@ export const utilService = {
     getBase64FromUrl,
     isHexColorLight,
 }
-
 const PHOTOS_API = 'rEYH87zI9xYojZC7mYsW6BIb3LgJblmjT6E30GnjUqI'
 
 export function getShortSentence(str, length = 48) {

@@ -10,9 +10,10 @@ export default {
   
   data() {
     return {
-      searchVal: "",
+      searchVal: ""
     };
   },
+
   methods: {
     setFilter() {
       this.$emit('setFilter', this.searchVal);
@@ -21,6 +22,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

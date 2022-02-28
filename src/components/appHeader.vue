@@ -1,7 +1,7 @@
 <template>
   <header class="app-header main-layout">
     <div class="flex align-center space-between">
-      <h1>Weather</h1>
+      <p class="logo">Weather</p>
       <nav class="flex align-center">
         <ul class="clean-list flex align-center">
           <router-link to="/weather">Weather</router-link>
@@ -17,11 +17,10 @@
 
 <script>
 import loginSignupModal from "./loginSignupModal.vue";
-import Avatar from 'vue-avatar'
+import Avatar from 'vue-avatar';
+
 export default {
   name: "app-header",
-
-  props: {},
 
   data() {
     return {
@@ -29,16 +28,17 @@ export default {
       user: null
     };
   },
+
   created() {
     this.getUser();
   },
 
   methods: {
-    toggleLoginModal() {
-      this.isLoginModal = !this.isLoginModal;
-    },
     async getUser() {
       this.user = await this.$store.getters.getLoggedinUser;
+    },
+    toggleLoginModal() {
+      this.isLoginModal = !this.isLoginModal;
     },
     toggleMenu() {
       this.isShowMenu = !this.isShowMenu;
@@ -48,7 +48,7 @@ export default {
   components: {
     loginSignupModal,
     Avatar
-  },
+  }
 };
 </script>
 

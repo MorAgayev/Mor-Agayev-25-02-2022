@@ -1,7 +1,6 @@
 <template>
-  <div v-if="alive" class="alert" :class="alertClass">
-    {{ msg.txt }}
-  </div>
+  <el-alert v-if="alive" :title="msg.txt" :type="msg.type" effect="dark" show-icon>
+  </el-alert>
 </template>
 
 <script>
@@ -21,15 +20,9 @@ export default {
   data() {
     return {
       alive: false,
-      msg: null,
+      msg: null
     };
-  },
-  computed: {
-    alertClass() {
-      if (!this.msg) return;
-      return `alert-${this.msg.type}`;
-    },
-  },
+  }
 };
 
 </script>

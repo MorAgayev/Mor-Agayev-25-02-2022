@@ -10,35 +10,38 @@
         <button v-else>Sign Up</button>
     </form>
     <hr>
-        <small v-if="isSignup" @click="isSignup=false">Login</small>
-        <small v-else @click="isSignup=true">Sign Up</small>
-        <small @click="closeModal">Close</small>
+    <small v-if="isSignup" @click="isSignup=false">Login</small>
+    <small v-else @click="isSignup=true">Sign Up</small>
+    <small @click="closeModal">Close</small>
     </section>
 </div>
 </template>
 
 <script>
+import { showMsg } from '../services/event-bus.service';
 
 export default {
     name: 'loginSignup',
+
     data() {
         return {
             isSignup: false,
             user: {
                 username: '',
-                password: '',
+                password: ''
             }
         }
     },
+
     methods: {
         async loginSignup() {
-            try{
+            try {
                 if(this.isSignup) await this.$store.dispatch({type: 'signup', user: this.user});
-                else await this.$store.dispatch({type: 'login', user: this.user})
-                this.$emit('getUser') 
-                this.closeModal()
+                else await this.$store.dispatch({type: 'login', user: this.user});
+                this.$emit('getUser');
+                this.closeModal();
             } catch(e) {
-                console.log('Login / Signup faild...', e);
+                showMsg('Login / Signup faild', 'error');
             }
         },
         closeModal() {

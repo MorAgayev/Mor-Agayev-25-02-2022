@@ -1,6 +1,6 @@
 import { makeId } from "./util.service";
 import { weatherService } from "./weater.service";
-const STORAGE_KEY_LOGGEDIN_USER = 'user'
+const STORAGE_KEY_LOGGEDIN_USER = 'user';
 
 export const userService = {
     login,
@@ -11,7 +11,7 @@ export const userService = {
     removeFavorite
 }
 
-const gUsers = JSON.parse(sessionStorage.getItem('users')) || []
+let gUsers = JSON.parse(sessionStorage.getItem('users')) || []
 
 async function login(user) {
     const loggedInUser = gUsers.find(currUser => currUser.username === user.username && currUser.password === user.password)
@@ -22,8 +22,8 @@ async function login(user) {
 async function signup(user) {
     user._id = makeId();
     user.favorites = []
-    gUsers.push(user);
-    sessionStorage.setItem('users', JSON.stringify(user))
+    gUsers.push(user)
+    sessionStorage.setItem('users', JSON.stringify(gUsers))
     return _saveLocalUser(user)
 }
 
